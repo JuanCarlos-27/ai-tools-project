@@ -62,7 +62,7 @@ export function useFilters(tools: Tool[]) {
         !filters.searchQuery ||
         tool.Tool_Name.toLowerCase().includes(filters.searchQuery.toLowerCase()) ||
         tool.AI_Category.toLowerCase().includes(filters.searchQuery.toLowerCase()) ||
-        tool.Use_Cases.toLowerCase().includes(filters.searchQuery.toLowerCase());
+        tool.Common_Use_Cases.toLowerCase().includes(filters.searchQuery.toLowerCase());
 
       return (
         matchesCategory &&
