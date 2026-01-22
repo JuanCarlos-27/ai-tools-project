@@ -1,0 +1,72 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "explorer": "Explorer"
+  },
+  "header": {
+    "title": "AI Ecosystem",
+    "subtitle": "Tools & Analytics",
+    "logoAlt": "AI Ecosystem"
+  },
+  "loading": {
+    "message": "Loading AI tools data..."
+  },
+  "footer": {
+    "author": "Juan Romero",
+    "projectDesc": "Data Analysis Project",
+    "techStack": "Built with React, TypeScript & Power BI • 2024-2025 AI Tools Dataset",
+    "githubLabel": "GitHub",
+    "linkedinLabel": "LinkedIn"
+  },
+  "dashboard": {
+    "title": "Analytics Overview",
+    "description": "Comprehensive insights from {{count}}+ AI tools — including trends, pricing models, and market distribution.",
+    "iframeTitle": "AI Tools Analytics Dashboard",
+    "info1": "This dashboard provides comprehensive insights into the AI tools ecosystem, including category distributions, pricing models, technology trends, and more.",
+    "info2": "Interact with the visualizations to explore the data in detail. Use filters and hover over charts for more information.",
+    "datasetSource": "Dataset source:",
+    "datasetLink": "Kaggle AI Tools Ecosystem Dataset (2024-2025)"
+  },
+  "explorer": {
+    "title": "Tools Catalog",
+    "description": "Search and filter {{count}} tools by category, pricing, industry, and more",
+    "showing": "Showing",
+    "tools": "tools",
+    "clearFilters": "Clear all filters ({{count}})",
+    "filtersTitle": "Filters",
+    "searchLabel": "Search",
+    "searchPlaceholder": "Search tools, categories, use cases...",
+    "categoryLabel": "Category",
+    "pricingLabel": "Pricing",
+    "industryLabel": "Industry",
+    "quickFiltersTitle": "Quick Filters",
+    "openSource": "Open Source",
+    "free": "Free",
+    "freemium": "Freemium",
+    "subscription": "Subscription",
+    "noResults": "No tools found",
+    "noResultsDesc": "Try adjusting your filters or search query",
+    "resetFilters": "Reset Filters"
+  },
+  "filters": {
+    "allCategory": "All Categories",
+    "allPricing": "All Pricing",
+    "allIndustry": "All Industries",
+    "allSkill": "All Skill Levels",
+    "allOpenSource": "All"
+  },
+  "toolCard": {
+    "openSource": "Open Source"
+  },
+  "chart": {
+    "total": "Total",
+    "value": "{{value}} tools"
+  },
+  "errors": {
+    "fetchError": "Failed to fetch AI tools data",
+    "consoleError": "Error fetching AI tools data:"
+  },
+  "meta": {
+    "title": "AI Tools Dataset - Interactive Dashboard"
+  }
+}

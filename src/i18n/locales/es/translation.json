@@ -1,0 +1,72 @@
+{
+  "nav": {
+    "dashboard": "Panel de Control",
+    "explorer": "Explorador"
+  },
+  "header": {
+    "title": "Ecosistema de IA",
+    "subtitle": "Herramientas y Análisis",
+    "logoAlt": "Ecosistema de IA"
+  },
+  "loading": {
+    "message": "Cargando datos de herramientas de IA..."
+  },
+  "footer": {
+    "author": "Juan Romero",
+    "projectDesc": "Proyecto de Análisis de Datos",
+    "techStack": "Desarrollado con React, TypeScript y Power BI • Dataset de Herramientas de IA 2024-2025",
+    "githubLabel": "GitHub",
+    "linkedinLabel": "LinkedIn"
+  },
+  "dashboard": {
+    "title": "Vista General de Análisis",
+    "description": "Información completa de más de {{count}} herramientas de IA — incluyendo tendencias, modelos de precios y distribución del mercado.",
+    "iframeTitle": "Panel de Análisis de Herramientas de IA",
+    "info1": "Este panel proporciona información completa sobre el ecosistema de herramientas de IA, incluyendo distribución de categorías, modelos de precios, tendencias tecnológicas y más.",
+    "info2": "Interactúa con las visualizaciones para explorar los datos en detalle. Usa los filtros y pasa el cursor sobre los gráficos para más información.",
+    "datasetSource": "Fuente del dataset:",
+    "datasetLink": "Dataset del Ecosistema de Herramientas de IA de Kaggle (2024-2025)"
+  },
+  "explorer": {
+    "title": "Catálogo de Herramientas",
+    "description": "Busca y filtra {{count}} herramientas por categoría, precio, industria y más",
+    "showing": "Mostrando",
+    "tools": "herramientas",
+    "clearFilters": "Limpiar todos los filtros ({{count}})",
+    "filtersTitle": "Filtros",
+    "searchLabel": "Buscar",
+    "searchPlaceholder": "Buscar herramientas, categorías, casos de uso...",
+    "categoryLabel": "Categoría",
+    "pricingLabel": "Precio",
+    "industryLabel": "Industria",
+    "quickFiltersTitle": "Filtros Rápidos",
+    "openSource": "Código Abierto",
+    "free": "Gratis",
+    "freemium": "Freemium",
+    "subscription": "Suscripción",
+    "noResults": "No se encontraron herramientas",
+    "noResultsDesc": "Intenta ajustar tus filtros o consulta de búsqueda",
+    "resetFilters": "Restablecer Filtros"
+  },
+  "filters": {
+    "allCategory": "Todas las Categorías",
+    "allPricing": "Todos los Precios",
+    "allIndustry": "Todas las Industrias",
+    "allSkill": "Todos los Niveles",
+    "allOpenSource": "Todos"
+  },
+  "toolCard": {
+    "openSource": "Código Abierto"
+  },
+  "chart": {
+    "total": "Total",
+    "value": "{{value}} herramientas"
+  },
+  "errors": {
+    "fetchError": "Error al cargar los datos de herramientas de IA",
+    "consoleError": "Error al obtener datos de herramientas de IA:"
+  },
+  "meta": {
+    "title": "Dataset de Herramientas de IA - Panel Interactivo"
+  }
+}

@@ -1,0 +1,142 @@
+@import 'tailwindcss';
+@import '@fontsource/montserrat';
+
+/* Power BI Theme Color Variables */
+:root {
+  --color-primary: #00d3c0;
+  --color-primary-hover: #00bfae;
+  --color-secondary: #4083ad;
+  --color-accent: #22c0ff;
+  --color-highlight: #dc7653;
+  --color-bg-page: #121526;
+  --color-bg-card: #212137;
+  --color-bg-hover: #2a2a45;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #717a90;
+  --color-text-tertiary: #4e7cff;
+  --color-border: #2a2a45;
+  --color-good: #4e7cff;
+  --color-neutral: #dc7653;
+  --color-bad: #f65164;
+}
+
+/* Custom scrollbar - Power BI Theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-page);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-text-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* Custom selection */
+::selection {
+  background: rgba(0, 211, 192, 0.3);
+  color: var(--color-text-primary);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Dark mode base - Power BI Theme */
+body {
+  background-color: var(--color-bg-page);
+  color: var(--color-text-primary);
+}
+
+/* Animation utilities */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-secondary) 0%,
+    var(--color-primary) 50%,
+    var(--color-secondary) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Line clamp */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* D3 chart styles */
+.tick text {
+  font-size: 12px;
+  fill: var(--color-text-secondary);
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(33, 33, 55, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+}
+
+/* Focus ring */
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
