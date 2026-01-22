@@ -1,7 +1,8 @@
 {
   "nav": {
     "dashboard": "Panel de Control",
-    "explorer": "Explorador"
+    "explorer": "Explorador",
+    "toggleMenu": "Abrir o cerrar navegación"
   },
   "header": {
     "title": "Ecosistema de IA",

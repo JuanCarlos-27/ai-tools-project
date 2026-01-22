@@ -7,22 +7,34 @@ import { fetchAIToolsData } from './utils/csvParser';
 import starIcon from './assets/logo.webp';
 import LanguageSelector from './components/common/LanguageSelector';
 
-function NavTabs() {
+type NavTabsProps = {
+  direction?: 'row' | 'column';
+  onNavigate?: () => void;
+};
+
+function NavTabs({ direction = 'row', onNavigate }: NavTabsProps) {
   const { t } = useTranslation();
   const location = useLocation();
   const isActive = (path: string) => location.pathname === path;
+  const isColumn = direction === 'column';
+  const containerClasses = isColumn ? 'flex flex-col gap-2' : 'flex items-center gap-1';
+  const linkBaseClasses = `flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200${isColumn ? ' w-full justify-start' : ''}`;
 
   return (
-    <div className="flex gap-1 p-1 rounded-lg" style={{ backgroundColor: 'rgba(33, 33, 55, 0.5)', borderRadius: '13px' }}>
+    <div
+      className={`${containerClasses} p-1 rounded-lg`}
+      style={{ backgroundColor: 'rgba(33, 33, 55, 0.5)', borderRadius: '13px' }}
+    >
       <Link
         to="/"
-        className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200"
+        className={linkBaseClasses}
         style={{
           backgroundColor: isActive('/') ? 'var(--color-primary)' : 'transparent',
           color: isActive('/') ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
           borderRadius: '10px',
           boxShadow: isActive('/') ? '0 4px 6px -1px rgba(0, 211, 192, 0.2)' : 'none'
         }}
+        onClick={() => onNavigate?.()}
         onMouseEnter={(e) => {
           if (!isActive('/')) {
             e.currentTarget.style.color = 'var(--color-text-primary)';
@@ -43,13 +55,14 @@ function NavTabs() {
       </Link>
       <Link
         to="/explorer"
-        className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200"
+        className={linkBaseClasses}
         style={{
           backgroundColor: isActive('/explorer') ? 'var(--color-primary)' : 'transparent',
           color: isActive('/explorer') ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
           borderRadius: '10px',
           boxShadow: isActive('/explorer') ? '0 4px 6px -1px rgba(0, 211, 192, 0.2)' : 'none'
         }}
+        onClick={() => onNavigate?.()}
         onMouseEnter={(e) => {
           if (!isActive('/explorer')) {
             e.currentTarget.style.color = 'var(--color-text-primary)';
@@ -74,6 +87,15 @@ function NavTabs() {
 
 function AppContent({ tools }: { tools: Tool[] }) {
   const { t } = useTranslation();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handlePopState = () => setIsMobileMenuOpen(false);
+    window.addEventListener('popstate', handlePopState);
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+    };
+  }, []);
 
   return (
     <>
@@ -84,7 +106,7 @@ function AppContent({ tools }: { tools: Tool[] }) {
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3">
               {/* Icon - Star */}
-              <div className="relative flex-shrink-0">
+              <div className="relative flex-0">
                 <img src={starIcon} alt={t('header.logoAlt')} className="size-11 object-contain" />
               </div>
 
@@ -101,10 +123,36 @@ function AppContent({ tools }: { tools: Tool[] }) {
 
             {/* Navigation & Language Selector */}
             <div className="flex items-center gap-3">
-              <NavTabs />
-              <LanguageSelector />
+              <div className="hidden md:flex items-center gap-3">
+                <NavTabs />
+                <LanguageSelector />
+              </div>
+              <div className="flex md:hidden items-center gap-2">
+                <LanguageSelector />
+                <button
+                  type="button"
+                  className="p-2 rounded-lg transition-colors"
+                  style={{ color: 'var(--color-text-secondary)' }}
+                  onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+                  aria-label={t('nav.toggleMenu')}
+                  aria-expanded={isMobileMenuOpen}
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    {isMobileMenuOpen ? (
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    ) : (
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                    )}
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
+          {isMobileMenuOpen && (
+            <div className="md:hidden pb-3 pt-2">
+              <NavTabs direction="column" onNavigate={() => setIsMobileMenuOpen(false)} />
+            </div>
+          )}
         </div>
       </header>
 
@@ -176,13 +224,6 @@ function AppContent({ tools }: { tools: Tool[] }) {
                 </a>
               </div>
             </div>
-
-            {/* Bottom Text */}
-            {/* <div className="text-center pt-4 w-full" style={{ borderTop: '1px solid var(--color-border)' }}>
-              <p className="text-xs" style={{ color: 'var(--color-text-secondary)' }}>
-                {t('footer.techStack')}
-              </p>
-            </div> */}
           </div>
         </div>
       </footer>
