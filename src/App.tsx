@@ -178,11 +178,11 @@ function AppContent({ tools }: { tools: Tool[] }) {
             </div>
 
             {/* Bottom Text */}
-            <div className="text-center pt-4 w-full" style={{ borderTop: '1px solid var(--color-border)' }}>
+            {/* <div className="text-center pt-4 w-full" style={{ borderTop: '1px solid var(--color-border)' }}>
               <p className="text-xs" style={{ color: 'var(--color-text-secondary)' }}>
                 {t('footer.techStack')}
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
       </footer>
