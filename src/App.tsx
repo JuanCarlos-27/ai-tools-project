@@ -106,7 +106,7 @@ function AppContent({ tools }: { tools: Tool[] }) {
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3">
               {/* Icon - Star */}
-              <div className="relative flex-0">
+              <div className="relative">
                 <img src={starIcon} alt={t('header.logoAlt')} className="size-11 object-contain" />
               </div>
 
