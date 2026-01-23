@@ -40,6 +40,8 @@
     "categoryLabel": "Categoría",
     "pricingLabel": "Precio",
     "industryLabel": "Industria",
+    "taskLabel": "Tarea Principal",
+    "audienceLabel": "Popular Entre",
     "quickFiltersTitle": "Filtros Rápidos",
     "openSource": "Código Abierto",
     "free": "Gratis",
@@ -54,10 +56,20 @@
     "allPricing": "Todos los Precios",
     "allIndustry": "Todas las Industrias",
     "allSkill": "Todos los Niveles",
-    "allOpenSource": "Todos"
+    "allOpenSource": "Todos",
+    "allTask": "Todas las Tareas",
+    "allAudience": "Todas las Audiencias"
   },
   "toolCard": {
-    "openSource": "Código Abierto"
+    "openSource": "Código Abierto",
+    "showDetails": "Ver detalles",
+    "hideDetails": "Ocultar detalles",
+    "strengths": "Fortalezas",
+    "limitations": "Limitaciones",
+    "popularAmong": "Popular entre",
+    "skillLevel": "Nivel de habilidad",
+    "useCases": "Casos de uso",
+    "visitWebsite": "Visitar"
   },
   "chart": {
     "total": "Total",

@@ -17,7 +17,7 @@ export default function SearchInput({ value, onChange, placeholder = "Search AI 
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        className="w-full rounded-lg py-2.5 pl-12 pr-4 font-medium focus:outline-none transition-all duration-200"
+        className="w-full rounded-lg py-2 pl-12 pr-4 font-medium focus:outline-none transition-all duration-200"
         style={{
           backgroundColor: 'var(--color-bg-card)',
           border: '1px solid var(--color-border)',

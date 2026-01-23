@@ -29,6 +29,8 @@ export interface FilterState {
   skillLevel: string;
   openSource: string;
   searchQuery: string;
+  primaryTask: string;
+  popularAmong: string;
 }
 
 export interface ChartData {

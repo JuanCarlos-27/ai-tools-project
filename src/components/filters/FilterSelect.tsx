@@ -16,7 +16,15 @@ export default function FilterSelect({ label, value, options, onChange, icon }: 
     const labelMap: Record<string, string> = {
       'Category': 'allCategory',
       'Pricing': 'allPricing',
-      'Industry': 'allIndustry'
+      'Industry': 'allIndustry',
+      'Primary Task': 'allTask',
+      'Popular Among': 'allAudience',
+      // Spanish labels
+      'Categoría': 'allCategory',
+      'Precio': 'allPricing',
+      'Industria': 'allIndustry',
+      'Tarea Principal': 'allTask',
+      'Popular Entre': 'allAudience'
     };
     return labelMap[label] || 'allCategory';
   };

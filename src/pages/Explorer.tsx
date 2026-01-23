@@ -20,6 +20,21 @@ function getIndustries(tools: Tool[]) {
   return Array.from(new Set(tools.map(t => t.Industry_Use))).sort();
 }
 
+function getPrimaryTasks(tools: Tool[]) {
+  return Array.from(new Set(tools.map(t => t.Primary_Task))).sort();
+}
+
+function getPopularAmong(tools: Tool[]) {
+  const audiences = new Set<string>();
+  tools.forEach(t => {
+    t.Popular_Among.split(',').forEach(audience => {
+      const trimmed = audience.trim();
+      if (trimmed) audiences.add(trimmed);
+    });
+  });
+  return Array.from(audiences).sort();
+}
+
 export default function Explorer({ tools }: ExplorerProps) {
   const { t } = useTranslation();
   const {
@@ -33,6 +48,8 @@ export default function Explorer({ tools }: ExplorerProps) {
   const categories = getCategories(tools);
   const pricingModels = getPricingModels(tools);
   const industries = getIndustries(tools);
+  const primaryTasks = getPrimaryTasks(tools);
+  const audiences = getPopularAmong(tools);
 
   return (
     <div className="space-y-6">
@@ -113,6 +130,18 @@ export default function Explorer({ tools }: ExplorerProps) {
             value={filters.industryUse}
             options={industries}
             onChange={(value) => updateFilter('industryUse', value)}
+          />
+          <FilterSelect
+            label={t('explorer.taskLabel')}
+            value={filters.primaryTask}
+            options={primaryTasks}
+            onChange={(value) => updateFilter('primaryTask', value)}
+          />
+          <FilterSelect
+            label={t('explorer.audienceLabel')}
+            value={filters.popularAmong}
+            options={audiences}
+            onChange={(value) => updateFilter('popularAmong', value)}
           />
         </div>
 

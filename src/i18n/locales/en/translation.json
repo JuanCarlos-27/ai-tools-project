@@ -40,6 +40,8 @@
     "categoryLabel": "Category",
     "pricingLabel": "Pricing",
     "industryLabel": "Industry",
+    "taskLabel": "Primary Task",
+    "audienceLabel": "Popular Among",
     "quickFiltersTitle": "Quick Filters",
     "openSource": "Open Source",
     "free": "Free",
@@ -54,10 +56,20 @@
     "allPricing": "All Pricing",
     "allIndustry": "All Industries",
     "allSkill": "All Skill Levels",
-    "allOpenSource": "All"
+    "allOpenSource": "All",
+    "allTask": "All Tasks",
+    "allAudience": "All Audiences"
   },
   "toolCard": {
-    "openSource": "Open Source"
+    "openSource": "Open Source",
+    "showDetails": "Show details",
+    "hideDetails": "Hide details",
+    "strengths": "Strengths",
+    "limitations": "Limitations",
+    "popularAmong": "Popular among",
+    "skillLevel": "Skill level",
+    "useCases": "Use cases",
+    "visitWebsite": "Visit"
   },
   "chart": {
     "total": "Total",

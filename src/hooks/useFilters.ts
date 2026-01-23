@@ -8,7 +8,9 @@ const initialFilters: FilterState = {
   industryUse: '',
   skillLevel: '',
   openSource: '',
-  searchQuery: ''
+  searchQuery: '',
+  primaryTask: '',
+  popularAmong: ''
 };
 
 export function useFilters(tools: Tool[]) {
@@ -22,7 +24,9 @@ export function useFilters(tools: Tool[]) {
       industryUse: searchParams.get('industry') || '',
       skillLevel: searchParams.get('skill') || '',
       openSource: searchParams.get('openSource') || '',
-      searchQuery: searchParams.get('search') || ''
+      searchQuery: searchParams.get('search') || '',
+      primaryTask: searchParams.get('task') || '',
+      popularAmong: searchParams.get('audience') || ''
     }),
     [searchParams]
   );
@@ -38,6 +42,8 @@ export function useFilters(tools: Tool[]) {
     if (filters.skillLevel) params.set('skill', filters.skillLevel);
     if (filters.openSource) params.set('openSource', filters.openSource);
     if (filters.searchQuery) params.set('search', filters.searchQuery);
+    if (filters.primaryTask) params.set('task', filters.primaryTask);
+    if (filters.popularAmong) params.set('audience', filters.popularAmong);
 
     setSearchParams(params, { replace: true });
   }, [filters, setSearchParams]);
@@ -58,11 +64,15 @@ export function useFilters(tools: Tool[]) {
       const matchesIndustry = !filters.industryUse || tool.Industry_Use === filters.industryUse;
       const matchesSkill = !filters.skillLevel || tool.Skill_Level === filters.skillLevel;
       const matchesOpenSource = !filters.openSource || tool.Open_Source === filters.openSource;
+      const matchesPrimaryTask = !filters.primaryTask || tool.Primary_Task === filters.primaryTask;
+      const matchesPopularAmong =
+        !filters.popularAmong || tool.Popular_Among.includes(filters.popularAmong);
       const matchesSearch =
         !filters.searchQuery ||
         tool.Tool_Name.toLowerCase().includes(filters.searchQuery.toLowerCase()) ||
         tool.AI_Category.toLowerCase().includes(filters.searchQuery.toLowerCase()) ||
-        tool.Common_Use_Cases.toLowerCase().includes(filters.searchQuery.toLowerCase());
+        tool.Common_Use_Cases.toLowerCase().includes(filters.searchQuery.toLowerCase()) ||
+        tool.Strengths.toLowerCase().includes(filters.searchQuery.toLowerCase());
 
       return (
         matchesCategory &&
@@ -70,6 +80,8 @@ export function useFilters(tools: Tool[]) {
         matchesIndustry &&
         matchesSkill &&
         matchesOpenSource &&
+        matchesPrimaryTask &&
+        matchesPopularAmong &&
         matchesSearch
       );
     });
