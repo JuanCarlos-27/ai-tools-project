@@ -30,7 +30,7 @@ export default function Dashboard({ tools }: DashboardProps) {
           allowFullScreen
           style={{
             border: 'none',
-            minHeight: '700px'
+            minHeight: '682px'
           }}
         />
       </div>
