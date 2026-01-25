@@ -26,7 +26,7 @@ export default function Dashboard({ tools }: DashboardProps) {
           title={t('dashboard.iframeTitle')}
           width="100%"
           height="541.25"
-          src="https://app.powerbi.com/reportEmbed?reportId=cbfa469a-513d-4030-bff6-c0ac88f36d6a&autoAuth=true&ctid=b1ba85eb-a253-4467-9ee8-d4f8ed4df300&filterPaneEnabled=false&navContentPaneEnabled=false"
+          src="https://app.powerbi.com/view?r=eyJrIjoiM2FjN2I1NGYtOTZlNy00ZTk2LTg0NGMtMjgwYWExYTcxYjIyIiwidCI6IjIyMmRkNmMyLTQ2MWMtNDlmMy05M2Y1LWYzY2U0ODZhODZlMCIsImMiOjF9&filterPaneEnabled=false&navContentPaneEnabled=false"
           allowFullScreen
           style={{
             border: 'none',
