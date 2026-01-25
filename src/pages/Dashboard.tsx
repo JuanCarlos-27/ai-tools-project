@@ -5,6 +5,8 @@ interface DashboardProps {
   tools: Tool[];
 }
 
+const DASHBOARD_IFRAME_SRC = "https://app.powerbi.com/view?r=eyJrIjoiNzUzYzMwZmEtYWJmNy00YTA0LTgxN2ItNDE3Y2Y5Yjc0NzJmIiwidCI6IjIyMmRkNmMyLTQ2MWMtNDlmMy05M2Y1LWYzY2U0ODZhODZlMCIsImMiOjF9";
+
 export default function Dashboard({ tools }: DashboardProps) {
   const { t } = useTranslation();
 
@@ -26,7 +28,7 @@ export default function Dashboard({ tools }: DashboardProps) {
           title={t('dashboard.iframeTitle')}
           width="100%"
           height="541.25"
-          src="https://app.powerbi.com/view?r=eyJrIjoiM2FjN2I1NGYtOTZlNy00ZTk2LTg0NGMtMjgwYWExYTcxYjIyIiwidCI6IjIyMmRkNmMyLTQ2MWMtNDlmMy05M2Y1LWYzY2U0ODZhODZlMCIsImMiOjF9&filterPaneEnabled=false&navContentPaneEnabled=false"
+          src={DASHBOARD_IFRAME_SRC + "&filterPaneEnabled=false&navContentPaneEnabled=false"}
           allowFullScreen
           style={{
             border: 'none',
