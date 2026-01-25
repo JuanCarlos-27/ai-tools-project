@@ -49,7 +49,10 @@
     "subscription": "Subscription",
     "noResults": "No tools found",
     "noResultsDesc": "Try adjusting your filters or search query",
-    "resetFilters": "Reset Filters"
+    "resetFilters": "Reset Filters",
+    "free": "Free",
+    "freemium": "Freemium",
+    "paid": "Paid"
   },
   "filters": {
     "allCategory": "All Categories",

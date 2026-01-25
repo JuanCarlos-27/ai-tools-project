@@ -8,20 +8,20 @@ export default function LanguageSelector() {
   };
 
   return (
-    <div className="flex items-center gap-1 p-1 rounded-lg" style={{ backgroundColor: 'rgba(33, 33, 55, 0.5)', borderRadius: '10px' }}>
+    <div className="flex items-center gap-1 p-1 rounded-lg" style={{ backgroundColor: 'var(--color-bg-hover)', borderRadius: '10px' }}>
       <button
         onClick={() => changeLanguage('en')}
         className="px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200"
         style={{
           backgroundColor: i18n.language === 'en' ? 'var(--color-primary)' : 'transparent',
-          color: i18n.language === 'en' ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
+          color: i18n.language === 'en' ? '#000000' : 'var(--color-text-secondary)',
           borderRadius: '8px',
-          boxShadow: i18n.language === 'en' ? '0 2px 4px -1px rgba(0, 211, 192, 0.2)' : 'none'
+          boxShadow: i18n.language === 'en' ? '0 2px 4px -1px var(--color-primary-light)' : 'none'
         }}
         onMouseEnter={(e) => {
           if (i18n.language !== 'en') {
             e.currentTarget.style.color = 'var(--color-text-primary)';
-            e.currentTarget.style.backgroundColor = 'rgba(42, 42, 69, 0.5)';
+            e.currentTarget.style.backgroundColor = 'var(--color-bg-card)';
           }
         }}
         onMouseLeave={(e) => {
@@ -38,14 +38,14 @@ export default function LanguageSelector() {
         className="px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200"
         style={{
           backgroundColor: i18n.language === 'es' ? 'var(--color-primary)' : 'transparent',
-          color: i18n.language === 'es' ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
+          color: i18n.language === 'es' ? '#000000' : 'var(--color-text-secondary)',
           borderRadius: '8px',
-          boxShadow: i18n.language === 'es' ? '0 2px 4px -1px rgba(0, 211, 192, 0.2)' : 'none'
+          boxShadow: i18n.language === 'es' ? '0 2px 4px -1px var(--color-primary-light)' : 'none'
         }}
         onMouseEnter={(e) => {
           if (i18n.language !== 'es') {
             e.currentTarget.style.color = 'var(--color-text-primary)';
-            e.currentTarget.style.backgroundColor = 'rgba(42, 42, 69, 0.5)';
+            e.currentTarget.style.backgroundColor = 'var(--color-bg-card)';
           }
         }}
         onMouseLeave={(e) => {

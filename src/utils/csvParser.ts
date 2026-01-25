@@ -65,7 +65,8 @@ function csvRowToTool(row: CSVRow): Tool {
     Common_Use_Cases: row['Common_Use_Cases'] || '',
     Strengths: row['Strengths'] || '',
     Limitations: row['Limitations'] || '',
-    Website_Category: row['Website_Category'] || ''
+    Website_Category: row['Website_Category'] || '',
+    URL: row['URL'] || ''
   };
 }
 

@@ -43,13 +43,15 @@
     "taskLabel": "Tarea Principal",
     "audienceLabel": "Popular Entre",
     "quickFiltersTitle": "Filtros Rápidos",
-    "openSource": "Código Abierto",
     "free": "Gratis",
     "freemium": "Freemium",
     "subscription": "Suscripción",
     "noResults": "No se encontraron herramientas",
     "noResultsDesc": "Intenta ajustar tus filtros o consulta de búsqueda",
-    "resetFilters": "Restablecer Filtros"
+    "resetFilters": "Restablecer Filtros",
+    "free": "Gratis",
+    "freemium": "Freemium",
+    "paid": "Pago"
   },
   "filters": {
     "allCategory": "Todas las Categorías",

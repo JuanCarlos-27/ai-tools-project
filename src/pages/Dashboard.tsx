@@ -38,7 +38,7 @@ export default function Dashboard({ tools }: DashboardProps) {
       </div>
 
       {/* Info Note */}
-      <div className="rounded-lg p-4" style={{ backgroundColor: 'rgba(33, 33, 55, 0.5)', border: '1px solid rgba(42, 42, 69, 0.5)', borderRadius: '13px' }}>
+      <div className="rounded-lg p-4" style={{ backgroundColor: 'var(--color-bg-card)', border: '1px solid var(--color-border)', borderRadius: '13px', boxShadow: '0 1px 3px var(--color-shadow)' }}>
         <div className="flex items-start gap-3">
           <svg className="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: 'var(--color-primary)' }}>
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -50,7 +50,7 @@ export default function Dashboard({ tools }: DashboardProps) {
             <p className="text-xs mt-2" style={{ color: 'var(--color-text-secondary)' }}>
               {t('dashboard.info2')}
             </p>
-            <p className="text-xs mt-3 pt-3" style={{ color: 'var(--color-text-secondary)', borderTop: '1px solid rgba(42, 42, 69, 0.5)' }}>
+            <p className="text-xs mt-3 pt-3" style={{ color: 'var(--color-text-secondary)', borderTop: '1px solid var(--color-border)' }}>
               <span className="inline-flex items-center gap-1.5">
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />

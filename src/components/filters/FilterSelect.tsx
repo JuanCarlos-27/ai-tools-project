@@ -56,7 +56,7 @@ export default function FilterSelect({ label, value, options, onChange, icon }: 
           }}
           onFocus={(e) => {
             e.currentTarget.style.borderColor = 'var(--color-primary)';
-            e.currentTarget.style.boxShadow = '0 0 0 2px rgba(0, 211, 192, 0.2)';
+            e.currentTarget.style.boxShadow = '0 0 0 2px var(--color-primary-light)';
           }}
           onBlur={(e) => {
             e.currentTarget.style.borderColor = 'var(--color-border)';

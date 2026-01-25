@@ -1,23 +1,86 @@
 @import 'tailwindcss';
 @import '@fontsource/montserrat';
 
-/* Power BI Theme Color Variables */
+/* Dark High-Contrast Theme - Neon & Black (Default) */
 :root {
-  --color-primary: #00d3c0;
-  --color-primary-hover: #00bfae;
-  --color-secondary: #4083ad;
-  --color-accent: #22c0ff;
-  --color-highlight: #dc7653;
-  --color-bg-page: #121526;
-  --color-bg-card: #212137;
-  --color-bg-hover: #2a2a45;
+  /* Neon Lime & Orange Accents */
+  --color-primary: #ccff00;
+  --color-primary-hover: #b3e600;
+  --color-secondary: #ff9900;
+  --color-accent: #ccff00;
+  --color-highlight: #ff9900;
+
+  /* Deep Dark Backgrounds */
+  --color-bg-page: #050505;
+  --color-bg-card: #141416;
+  --color-bg-hover: #1f1f22;
+
+  /* High Contrast Text */
   --color-text-primary: #ffffff;
-  --color-text-secondary: #717a90;
-  --color-text-tertiary: #4e7cff;
-  --color-border: #2a2a45;
-  --color-good: #4e7cff;
-  --color-neutral: #dc7653;
-  --color-bad: #f65164;
+  --color-text-secondary: #a1a1aa;
+  --color-text-tertiary: #ccff00;
+
+  /* Subtle Borders */
+  --color-border: #27272a;
+
+  /* Status Colors */
+  --color-good: #ccff00;
+  --color-neutral: #ff9900;
+  --color-bad: #ef4444;
+
+  /* Layout Headers/Footers */
+  --color-header-bg: rgba(20, 20, 22, 0.8); /* Glass effect built-in */
+  --color-footer-bg: #050505;
+
+  /* Transparencies */
+  --color-nav-hover-bg: rgba(204, 255, 0, 0.1);
+  --color-accent-light: rgba(204, 255, 0, 0.05);
+  --color-primary-light: rgba(204, 255, 0, 0.1);
+  --color-shadow: rgba(0, 0, 0, 0.5);
+
+  /* Grid & Pattern */
+  --color-grid-line: rgba(255, 255, 255, 0.03);
+}
+
+/* Light Theme - Clean Professional */
+[data-theme='light'] {
+  /* Olive Green Brand */
+  --color-primary: #628141;
+  --color-primary-hover: #4f6635;
+  --color-secondary: #40513b;
+  --color-accent: #628141;
+  --color-highlight: #628141;
+
+  /* Clean Light Backgrounds */
+  --color-bg-page: #fafafa;
+  --color-bg-card: #ffffff;
+  --color-bg-hover: #f5f5f5;
+
+  /* Dark Text */
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #666666;
+  --color-text-tertiary: #628141;
+
+  /* Borders */
+  --color-border: #e0e0e0;
+
+  /* Status Colors */
+  --color-good: #628141;
+  --color-neutral: #f59e0b;
+  --color-bad: #ef4444;
+
+  /* Layout Headers/Footers */
+  --color-header-bg: rgba(255, 255, 255, 0.9);
+  --color-footer-bg: #fafafa;
+
+  /* Transparencies */
+  --color-nav-hover-bg: rgba(98, 129, 65, 0.08);
+  --color-accent-light: rgba(98, 129, 65, 0.08);
+  --color-primary-light: rgba(98, 129, 65, 0.1);
+  --color-shadow: rgba(0, 0, 0, 0.06);
+
+  /* Grid & Pattern */
+  --color-grid-line: rgba(0, 0, 0, 0.03);
 }
 
 /* Custom scrollbar - Power BI Theme */
@@ -31,7 +94,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-text-secondary);
+  background: var(--color-border);
   border-radius: 4px;
 }
 
@@ -41,7 +104,7 @@
 
 /* Custom selection */
 ::selection {
-  background: rgba(0, 211, 192, 0.3);
+  background: rgba(98, 129, 65, 0.2);
   color: var(--color-text-primary);
 }
 
@@ -51,8 +114,9 @@ html {
   font-family: 'Montserrat', sans-serif;
 }
 
-/* Dark mode base - Power BI Theme */
+/* Base styles */
 body {
+  min-height: 100vh;
   background-color: var(--color-bg-page);
   color: var(--color-text-primary);
 }
@@ -129,10 +193,24 @@ body {
 
 /* Glass effect */
 .glass {
-  background: rgba(33, 33, 55, 0.8);
+  background: rgba(20, 20, 22, 0.8);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--color-border);
+}
+
+/* Subtle dot pattern */
+.bg-dots {
+  background-image: radial-gradient(var(--color-border) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.3;
+}
+
+.bg-grid {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, var(--color-grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-grid-line) 1px, transparent 1px);
 }
 
 /* Focus ring */

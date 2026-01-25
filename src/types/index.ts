@@ -20,6 +20,7 @@ export interface Tool {
   Strengths: string;
   Limitations: string;
   Website_Category: string;
+  URL: string;
 }
 
 export interface FilterState {

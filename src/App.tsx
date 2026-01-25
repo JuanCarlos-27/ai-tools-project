@@ -6,6 +6,7 @@ import type { Tool } from './types';
 import { fetchAIToolsData } from './utils/csvParser';
 import starIcon from './assets/logo.webp';
 import LanguageSelector from './components/common/LanguageSelector';
+import ThemeToggle from './components/common/ThemeToggle';
 
 type NavTabsProps = {
   direction?: 'row' | 'column';
@@ -23,22 +24,23 @@ function NavTabs({ direction = 'row', onNavigate }: NavTabsProps) {
   return (
     <div
       className={`${containerClasses} p-1 rounded-lg`}
-      style={{ backgroundColor: 'rgba(33, 33, 55, 0.5)', borderRadius: '13px' }}
+      style={{ backgroundColor: 'var(--color-nav-hover-bg)', borderRadius: '13px' }}
     >
       <Link
         to="/"
         className={linkBaseClasses}
         style={{
           backgroundColor: isActive('/') ? 'var(--color-primary)' : 'transparent',
-          color: isActive('/') ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
+          color: isActive('/') ? 'var(--color-bg-page)' : 'var(--color-text-secondary)',
           borderRadius: '10px',
-          boxShadow: isActive('/') ? '0 4px 6px -1px rgba(0, 211, 192, 0.2)' : 'none'
+          fontWeight: isActive('/') ? '700' : '500',
+          boxShadow: isActive('/') ? '0 4px 6px -1px var(--color-primary-light)' : 'none'
         }}
         onClick={() => onNavigate?.()}
         onMouseEnter={(e) => {
           if (!isActive('/')) {
             e.currentTarget.style.color = 'var(--color-text-primary)';
-            e.currentTarget.style.backgroundColor = 'rgba(42, 42, 69, 0.5)';
+            e.currentTarget.style.backgroundColor = 'var(--color-nav-hover-bg)';
           }
         }}
         onMouseLeave={(e) => {
@@ -58,15 +60,16 @@ function NavTabs({ direction = 'row', onNavigate }: NavTabsProps) {
         className={linkBaseClasses}
         style={{
           backgroundColor: isActive('/explorer') ? 'var(--color-primary)' : 'transparent',
-          color: isActive('/explorer') ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
+          color: isActive('/explorer') ? 'var(--color-bg-page)' : 'var(--color-text-secondary)',
           borderRadius: '10px',
-          boxShadow: isActive('/explorer') ? '0 4px 6px -1px rgba(0, 211, 192, 0.2)' : 'none'
+          fontWeight: isActive('/explorer') ? '700' : '500',
+          boxShadow: isActive('/explorer') ? '0 4px 6px -1px var(--color-primary-light)' : 'none'
         }}
         onClick={() => onNavigate?.()}
         onMouseEnter={(e) => {
           if (!isActive('/explorer')) {
             e.currentTarget.style.color = 'var(--color-text-primary)';
-            e.currentTarget.style.backgroundColor = 'rgba(42, 42, 69, 0.5)';
+            e.currentTarget.style.backgroundColor = 'var(--color-nav-hover-bg)';
           }
         }}
         onMouseLeave={(e) => {
@@ -100,7 +103,7 @@ function AppContent({ tools }: { tools: Tool[] }) {
   return (
     <>
       {/* Header */}
-      <header className="sticky top-0 z-50 backdrop-blur" style={{ backgroundColor: 'rgba(33, 33, 55, 0.9)', borderBottom: '1px solid var(--color-border)' }}>
+      <header className="sticky top-0 z-50 backdrop-blur border-b" style={{ backgroundColor: 'var(--color-header-bg)', borderColor: 'var(--color-border)', boxShadow: '0 1px 3px var(--color-shadow)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
@@ -125,9 +128,11 @@ function AppContent({ tools }: { tools: Tool[] }) {
             <div className="flex items-center gap-3">
               <div className="hidden md:flex items-center gap-3">
                 <NavTabs />
+                <ThemeToggle />
                 <LanguageSelector />
               </div>
               <div className="flex md:hidden items-center gap-2">
+                <ThemeToggle />
                 <LanguageSelector />
                 <button
                   type="button"
@@ -165,15 +170,13 @@ function AppContent({ tools }: { tools: Tool[] }) {
       </main>
 
       {/* Footer */}
-      <footer className="mt-16" style={{ borderTop: '1px solid var(--color-border)', backgroundColor: 'rgba(33, 33, 55, 0.5)' }}>
+      <footer className="mt-16 border-t" style={{ borderColor: 'var(--color-border)', backgroundColor: 'var(--color-footer-bg)', boxShadow: '0 -1px 3px var(--color-shadow)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col items-center gap-6">
             {/* Main Content */}
             <div className="flex flex-col sm:flex-row items-center justify-between w-full gap-4">
               <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
-                <p className="text-sm font-medium" style={{ color: 'var(--color-text-primary)' }}>
-                  {t('footer.author')}
-                </p>
+
                 <span className="hidden sm:block text-xs" style={{ color: 'var(--color-border)' }}>•</span>
                 <p className="text-xs" style={{ color: 'var(--color-text-secondary)' }}>
                   {t('footer.projectDesc')}
@@ -189,8 +192,8 @@ function AppContent({ tools }: { tools: Tool[] }) {
                   className="transition-all p-2 rounded-lg"
                   style={{ color: 'var(--color-text-secondary)' }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.color = 'var(--color-primary)';
-                    e.currentTarget.style.backgroundColor = 'rgba(0, 211, 192, 0.1)';
+                    e.currentTarget.style.color = 'var(--color-accent)';
+                    e.currentTarget.style.backgroundColor = 'var(--color-accent-light)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.color = 'var(--color-text-secondary)';
@@ -209,8 +212,8 @@ function AppContent({ tools }: { tools: Tool[] }) {
                   className="transition-all p-2 rounded-lg"
                   style={{ color: 'var(--color-text-secondary)' }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.color = 'var(--color-primary)';
-                    e.currentTarget.style.backgroundColor = 'rgba(0, 211, 192, 0.1)';
+                    e.currentTarget.style.color = 'var(--color-accent)';
+                    e.currentTarget.style.backgroundColor = 'var(--color-accent-light)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.color = 'var(--color-text-secondary)';
@@ -256,7 +259,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="min-h-screen" style={{ backgroundColor: 'var(--color-bg-page)' }}>
+      <div className="min-h-screen bg-grid">
         <AppContent tools={tools} />
       </div>
     </BrowserRouter>

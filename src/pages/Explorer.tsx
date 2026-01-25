@@ -94,7 +94,7 @@ export default function Explorer({ tools }: ExplorerProps) {
       </div>
 
       {/* Filters Panel */}
-      <div className="rounded-lg p-4 sm:p-6 backdrop-blur overflow-x-auto" style={{ backgroundColor: 'rgba(33, 33, 55, 0.5)', border: '1px solid var(--color-border)', borderRadius: '13px' }}>
+      <div className="rounded-lg p-4 sm:p-6 overflow-x-auto" style={{ backgroundColor: 'var(--color-bg-card)', border: '1px solid var(--color-border)', borderRadius: '13px', boxShadow: '0 1px 3px var(--color-shadow)' }}>
         <div className="flex items-center gap-2 mb-4">
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: 'var(--color-primary)' }}>
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
@@ -149,26 +149,14 @@ export default function Explorer({ tools }: ExplorerProps) {
         <div className="mt-4 pt-4" style={{ borderTop: '1px solid var(--color-border)' }}>
           <div className="flex flex-wrap gap-2">
             <span className="text-xs self-center mr-2" style={{ color: 'var(--color-text-secondary)' }}>{t('explorer.quickFiltersTitle')}:</span>
-            <button
-              onClick={() => updateFilter('openSource', filters.openSource === 'Yes' ? '' : 'Yes')}
-              className="px-3 py-1 text-xs rounded transition-all"
-              style={{
-                backgroundColor: filters.openSource === 'Yes' ? 'var(--color-good)' : 'var(--color-bg-card)',
-                color: filters.openSource === 'Yes' ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
-                border: filters.openSource === 'Yes' ? '1px solid var(--color-good)' : '1px solid var(--color-border)',
-                borderRadius: '8px'
-              }}
-            >
-              {t('explorer.openSource')}
-            </button>
-            {['Free', 'Freemium', 'Subscription'].map((pricing) => (
+            {['Free', 'Freemium', 'Paid'].map((pricing) => (
               <button
                 key={pricing}
                 onClick={() => updateFilter('pricingModel', filters.pricingModel === pricing ? '' : pricing)}
                 className="px-3 py-1 text-xs rounded transition-all"
                 style={{
                   backgroundColor: filters.pricingModel === pricing ? 'var(--color-primary)' : 'var(--color-bg-card)',
-                  color: filters.pricingModel === pricing ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
+                  color: filters.pricingModel === pricing ? '#000000' : 'var(--color-text-secondary)',
                   border: filters.pricingModel === pricing ? '1px solid var(--color-primary)' : '1px solid var(--color-border)',
                   borderRadius: '8px'
                 }}
@@ -201,7 +189,7 @@ export default function Explorer({ tools }: ExplorerProps) {
             className="px-4 py-2 rounded transition-colors font-medium"
             style={{
               backgroundColor: 'var(--color-primary)',
-              color: 'var(--color-text-primary)',
+              color: '#000000',
               borderRadius: '10px'
             }}
           >

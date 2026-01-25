@@ -14,7 +14,7 @@ interface TabsProps {
 
 export default function Tabs({ tabs, activeTab, onTabChange }: TabsProps) {
   return (
-    <div className="flex gap-1 p-1 rounded-lg" style={{ backgroundColor: 'rgba(33, 33, 55, 0.5)', borderRadius: '13px' }}>
+    <div className="flex gap-1 p-1 rounded-lg" style={{ backgroundColor: 'var(--color-bg-card)', borderRadius: '13px', border: '1px solid var(--color-border)' }}>
       {tabs.map((tab) => (
         <button
           key={tab.id}
@@ -27,9 +27,10 @@ export default function Tabs({ tabs, activeTab, onTabChange }: TabsProps) {
             activeTab === tab.id
               ? {
                 backgroundColor: 'var(--color-primary)',
-                color: 'var(--color-text-primary)',
+                color: '#000000',
+                fontWeight: 'bold',
                 borderRadius: '10px',
-                boxShadow: '0 4px 6px -1px rgba(0, 211, 192, 0.2)'
+                boxShadow: '0 4px 6px -1px var(--color-primary-light)'
               }
               : {
                 color: 'var(--color-text-secondary)',
@@ -39,7 +40,7 @@ export default function Tabs({ tabs, activeTab, onTabChange }: TabsProps) {
           onMouseEnter={(e) => {
             if (activeTab !== tab.id) {
               e.currentTarget.style.color = 'var(--color-text-primary)';
-              e.currentTarget.style.backgroundColor = 'rgba(42, 42, 69, 0.5)';
+              e.currentTarget.style.backgroundColor = 'var(--color-bg-hover)';
             }
           }}
           onMouseLeave={(e) => {
